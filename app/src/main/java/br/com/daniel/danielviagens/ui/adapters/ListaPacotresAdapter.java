@@ -12,7 +12,11 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.List;
+import java.util.Locale;
 
 import br.com.daniel.danielviagens.R;
 import br.com.daniel.danielviagens.model.Pacote;
@@ -63,11 +67,23 @@ public class ListaPacotresAdapter extends BaseAdapter {
 
         //pegar dias do pacote e jogar na view
         TextView dias = viewCriada.findViewById(R.id.item_pacote_dias);
-        dias.setText(pacote.getDias() + " dias");
+        int pacoteDias = pacote.getDias();
+        String quantidadeDeDias = "";
+        if (pacoteDias > 1) {
+            quantidadeDeDias = pacoteDias + " dias";
+        } else {
+            quantidadeDeDias = pacoteDias + " dia";
+        }
+        dias.setText(quantidadeDeDias);
 
         //pegar preco do pacote e jogar na view
         TextView preco = viewCriada.findViewById(R.id.item_pacote_preco);
-        preco.setText(pacote.getPreco().toString());
+        NumberFormat formatoBrasileiro = DecimalFormat.getCurrencyInstance(new Locale("pt", "br"));
+        BigDecimal precoDoPacote = pacote.getPreco();
+        String moedaBrasileira = formatoBrasileiro.format(precoDoPacote);
+        //        Na aula o instrutor fez assim mas no meu caso não foi preciso.
+        //        String moedaBrasileira = formatoBrasileiro.format(precoDoPacote).replace("R$", "R$ ");
+        preco.setText(moedaBrasileira);
 
         return viewCriada;
     }
