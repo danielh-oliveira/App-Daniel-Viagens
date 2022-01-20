@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Daniel Viagens</string>
+    <string name="TITULO">Especiais</string>
+    <string name="SUBTITULO">Brasil</string>
+    <string name="DESC_BANNER">Banner inicial roxo dos pacotes</string>
 </resources>
