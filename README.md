@@ -4,6 +4,9 @@ Estou desenvolvendo junto com as aulas do instrutor do curso de Constraint Layou
 
 ## 📲 Demonstração
 
+Criei a primeira tela do aplicativo onde é possivel visualizar os pacotes de viagens.
+
+![Captura de tela mostrando pacotes de viagem](/screenshot_1.PNG) | ![Captura de tela mostrando pacotes de viagem](/screenshot_2.PNG)
 
 ## Instalação
 
