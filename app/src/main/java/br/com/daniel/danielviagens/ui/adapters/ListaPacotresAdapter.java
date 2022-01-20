@@ -1,7 +1,6 @@
 package br.com.daniel.danielviagens.ui.adapters;
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,21 +9,18 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
-import java.math.BigDecimal;
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
 import java.util.List;
-import java.util.Locale;
 
+import br.com.daniel.danielviagens.util.DiasUtil;
+import br.com.daniel.danielviagens.util.MoedaUtil;
 import br.com.daniel.danielviagens.R;
+import br.com.daniel.danielviagens.util.ResourcesUtil;
 import br.com.daniel.danielviagens.model.Pacote;
 
 public class ListaPacotresAdapter extends BaseAdapter {
 
-    private List<Pacote> pacotes;
-    private Context context;
+    private final List<Pacote> pacotes;
+    private final Context context;
 
     public ListaPacotresAdapter(List<Pacote> pacotes, Context context){
         this.pacotes = pacotes;
@@ -54,37 +50,39 @@ public class ListaPacotresAdapter extends BaseAdapter {
 
         Pacote pacote = pacotes.get(posicao);
 
+        mostraLocal(viewCriada, pacote);
+        mostraImagem(viewCriada, pacote);
+        mostraDias(viewCriada, pacote);
+        mostraPreco(viewCriada, pacote);
+
+        return viewCriada;
+    }
+
+    private void mostraPreco(View viewCriada, Pacote pacote) {
+        //pegar preco do pacote e jogar na view
+        TextView preco = viewCriada.findViewById(R.id.item_pacote_preco);
+        String moedaBrasileira = MoedaUtil.formataParaBrasileiro(pacote.getPreco());
+        preco.setText(moedaBrasileira);
+    }
+
+    private void mostraDias(View viewCriada, Pacote pacote) {
+        //pegar dias do pacote e jogar na view
+        TextView dias = viewCriada.findViewById(R.id.item_pacote_dias);
+        String quantidadeDeDias = DiasUtil.formataEmTexto(pacote.getDias());
+        dias.setText(quantidadeDeDias);
+    }
+
+    private void mostraImagem(View viewCriada, Pacote pacote) {
+        //pegar imagem do pacote e jogar na view
+        ImageView imagem = viewCriada.findViewById(R.id.item_pacote_imagem);
+        Drawable drawableImagemPacote = ResourcesUtil.devolveDrawable(context, pacote.getImagem());
+        imagem.setImageDrawable(drawableImagemPacote);
+        //Socorro
+    }
+
+    private void mostraLocal(View viewCriada, Pacote pacote) {
         //pegar nome do pacote e jogar na view
         TextView nome = viewCriada.findViewById(R.id.item_pacote_nome_cidade);
         nome.setText(pacote.getLocal());
-
-        //pegar imagem do pacote e jogar na view
-        ImageView imagem = viewCriada.findViewById(R.id.item_pacote_imagem);
-        Resources resources = context.getResources();
-        int idDoDrawable = resources.getIdentifier(pacote.getImagem(), "drawable", context.getPackageName());
-        Drawable drawableImagemPacote = resources.getDrawable(idDoDrawable);
-        imagem.setImageDrawable(drawableImagemPacote);
-
-        //pegar dias do pacote e jogar na view
-        TextView dias = viewCriada.findViewById(R.id.item_pacote_dias);
-        int pacoteDias = pacote.getDias();
-        String quantidadeDeDias = "";
-        if (pacoteDias > 1) {
-            quantidadeDeDias = pacoteDias + " dias";
-        } else {
-            quantidadeDeDias = pacoteDias + " dia";
-        }
-        dias.setText(quantidadeDeDias);
-
-        //pegar preco do pacote e jogar na view
-        TextView preco = viewCriada.findViewById(R.id.item_pacote_preco);
-        NumberFormat formatoBrasileiro = DecimalFormat.getCurrencyInstance(new Locale("pt", "br"));
-        BigDecimal precoDoPacote = pacote.getPreco();
-        String moedaBrasileira = formatoBrasileiro.format(precoDoPacote);
-        //        Na aula o instrutor fez assim mas no meu caso não foi preciso.
-        //        String moedaBrasileira = formatoBrasileiro.format(precoDoPacote).replace("R$", "R$ ");
-        preco.setText(moedaBrasileira);
-
-        return viewCriada;
     }
 }
