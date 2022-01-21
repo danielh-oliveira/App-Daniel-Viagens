@@ -2,6 +2,8 @@ package br.com.daniel.danielviagens.model;
 
 import java.math.BigDecimal;
 
+import br.com.daniel.danielviagens.util.DiasUtil;
+
 public class Pacote {
 
     private final String local;
@@ -30,6 +32,10 @@ public class Pacote {
 
     public BigDecimal getPreco() {
         return preco;
+    }
+
+    public String getDatas() {
+        return DiasUtil.formatarDatas(dias);
     }
 
 }

@@ -2,6 +2,9 @@ package br.com.daniel.danielviagens.util;
 
 import androidx.annotation.NonNull;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 import br.com.daniel.danielviagens.model.Pacote;
 
 public class DiasUtil {
@@ -15,5 +18,16 @@ public class DiasUtil {
             return numeroDeDias + PLURAL;
         }
         return numeroDeDias + SINGULAR;
+    }
+
+    public static String formatarDatas(int dias) {
+        Calendar dataIda = Calendar.getInstance();
+        Calendar dataVolta = Calendar.getInstance();
+        dataVolta.add(Calendar.DATE, dias);
+
+        SimpleDateFormat formatoBrasileiro = new SimpleDateFormat("dd/MM");
+        String dataIdaFromatada = formatoBrasileiro.format(dataIda.getTime());
+        String dataVoltaFormatada = formatoBrasileiro.format(dataVolta.getTime());
+        return dataIdaFromatada + " - " + dataVoltaFormatada + " de " + dataVolta.get(Calendar.YEAR);
     }
 }
