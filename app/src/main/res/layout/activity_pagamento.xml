@@ -44,45 +44,42 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:hint="@string/numero_cartao"
-        android:hintTextColor="#757575"
+        android:importantForAutofill="no"
         android:inputType="number"
         android:maxLength="12"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pagamento_compra_preco"
-        tools:ignore="TextContrastCheck"
-        android:importantForAutofill="no" />
+        tools:ignore="TextContrastCheck" />
 
     <EditText
         android:id="@+id/pagamento_cartao_mes"
         android:layout_width="48dp"
         android:layout_height="wrap_content"
         android:hint="@string/mes_cartao"
-        android:hintTextColor="#757575"
+        android:importantForAutofill="no"
         android:inputType="number"
         android:maxLength="2"
         android:minHeight="48dp"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="@id/pagamento_cartao_cvc"
         app:layout_constraintStart_toStartOf="@+id/pagamento_cartao_numero"
-        tools:ignore="TextContrastCheck"
-        android:importantForAutofill="no" />
+        tools:ignore="TextContrastCheck" />
 
     <EditText
         android:id="@+id/pagamento_cartao_ano"
         android:layout_width="48dp"
         android:layout_height="wrap_content"
         android:hint="@string/ano_cartao"
-        android:hintTextColor="#757575"
+        android:importantForAutofill="no"
         android:inputType="number"
         android:maxLength="2"
         android:minHeight="48dp"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="@id/pagamento_cartao_cvc"
         app:layout_constraintStart_toEndOf="@id/pagamento_cartao_mes"
-        tools:ignore="TextContrastCheck"
-        android:importantForAutofill="no" />
+        tools:ignore="TextContrastCheck" />
 
     <EditText
         android:id="@+id/pagamento_cartao_cvc"
@@ -91,15 +88,14 @@
         android:layout_marginTop="8dp"
         android:drawableStart="@drawable/ic_cvc_cartao_de_credito"
         android:hint="@string/cvc_cartao"
-        android:hintTextColor="#757575"
+        android:importantForAutofill="no"
         android:inputType="number"
         android:maxLength="2"
         android:minHeight="48dp"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="@id/pagamento_cartao_numero"
         app:layout_constraintTop_toBottomOf="@+id/pagamento_cartao_numero"
-        tools:ignore="TextContrastCheck"
-        android:importantForAutofill="no" />
+        tools:ignore="TextContrastCheck" />
 
     <EditText
         android:id="@+id/pagamento_cartao_nome"
@@ -108,14 +104,13 @@
         android:layout_marginTop="8dp"
         android:digits="@string/mascara_cartao_nome"
         android:hint="@string/nome_cartao"
-        android:hintTextColor="#757575"
+        android:importantForAutofill="no"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="@+id/pagamento_cartao_cvc"
         app:layout_constraintStart_toStartOf="@+id/pagamento_cartao_mes"
         app:layout_constraintTop_toBottomOf="@+id/pagamento_cartao_cvc"
-        tools:ignore="TextContrastCheck"
-        android:importantForAutofill="no" />
+        tools:ignore="TextContrastCheck" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/pagamento_botao_finaliza_compra"
