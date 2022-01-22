@@ -11,6 +11,7 @@ public class DiasUtil {
 
     public static final String PLURAL = " dias";
     public static final String SINGULAR = " dia";
+    public static final String DIA_MES = "dd/MM";
 
     @NonNull
     public static String formataEmTexto(int numeroDeDias) {
@@ -25,7 +26,7 @@ public class DiasUtil {
         Calendar dataVolta = Calendar.getInstance();
         dataVolta.add(Calendar.DATE, dias);
 
-        SimpleDateFormat formatoBrasileiro = new SimpleDateFormat("dd/MM");
+        SimpleDateFormat formatoBrasileiro = new SimpleDateFormat(DIA_MES);
         String dataIdaFromatada = formatoBrasileiro.format(dataIda.getTime());
         String dataVoltaFormatada = formatoBrasileiro.format(dataVolta.getTime());
         return dataIdaFromatada + " - " + dataVoltaFormatada + " de " + dataVolta.get(Calendar.YEAR);

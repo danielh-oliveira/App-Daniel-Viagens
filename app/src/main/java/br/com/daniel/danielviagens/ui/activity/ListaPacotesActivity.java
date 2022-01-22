@@ -21,11 +21,11 @@ public class ListaPacotesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_pacotes);
-
         setTitle(NOME_APPBAR);
+
         configuraLista();
 
-        Intent intent = new Intent(this, ResumoPacoteActivity.class);
+        Intent intent = new Intent(this, PagamentoActivity.class);
         startActivity(intent);
     }
 

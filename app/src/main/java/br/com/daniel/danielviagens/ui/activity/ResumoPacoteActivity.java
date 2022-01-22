@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -18,28 +17,46 @@ import br.com.daniel.danielviagens.util.ResourcesUtil;
 
 public class ResumoPacoteActivity extends AppCompatActivity {
 
+    public static final String TITULO_APPBAR_RESUMO = "Resumo do pacote";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resumo_pacote);
-        setTitle("Resumo do pacote");
+        setTitle(TITULO_APPBAR_RESUMO);
 
         Pacote pacoteSaoPaulo = new Pacote("São Paulo", "sao_paulo_sp", 2, new BigDecimal("243.99"));
 
-        TextView local = findViewById(R.id.resumo_pacote_local);
-        local.setText(pacoteSaoPaulo.getLocal());
+        mostraLocal(pacoteSaoPaulo);
+        mostraImagem(pacoteSaoPaulo);
+        mostraDias(pacoteSaoPaulo);
+        mostraDatas(pacoteSaoPaulo);
+        mostraPreco(pacoteSaoPaulo);
+    }
 
-        ImageView imagem = findViewById(R.id.resumo_pacote_imagem);
-        Drawable drawableDoPacote = ResourcesUtil.devolveDrawable(this, pacoteSaoPaulo.getImagem());
-        imagem.setImageDrawable(drawableDoPacote);
-
-        TextView dias = findViewById(R.id.resumo_pacote_dias);
-        dias.setText(DiasUtil.formataEmTexto(pacoteSaoPaulo.getDias()));
-
-        TextView datas = findViewById(R.id.resumo_pacote_datas);
-        datas.setText(pacoteSaoPaulo.getDatas());
-
+    private void mostraPreco(Pacote pacote) {
         TextView preco = findViewById(R.id.resumo_pacote_preco);
-        preco.setText(MoedaUtil.formataParaBrasileiro(pacoteSaoPaulo.getPreco()));
+        preco.setText(MoedaUtil.formataParaBrasileiro(pacote.getPreco()));
+    }
+
+    private void mostraDatas(Pacote pacote) {
+        TextView datas = findViewById(R.id.resumo_pacote_datas);
+        datas.setText(pacote.getDatas());
+    }
+
+    private void mostraDias(Pacote pacote) {
+        TextView dias = findViewById(R.id.resumo_pacote_dias);
+        dias.setText(DiasUtil.formataEmTexto(pacote.getDias()));
+    }
+
+    private void mostraImagem(Pacote pacote) {
+        ImageView imagem = findViewById(R.id.resumo_pacote_imagem);
+        Drawable drawableDoPacote = ResourcesUtil.devolveDrawable(this, pacote.getImagem());
+        imagem.setImageDrawable(drawableDoPacote);
+    }
+
+    private void mostraLocal(Pacote pacote) {
+        TextView local = findViewById(R.id.resumo_pacote_local);
+        local.setText(pacote.getLocal());
     }
 }
