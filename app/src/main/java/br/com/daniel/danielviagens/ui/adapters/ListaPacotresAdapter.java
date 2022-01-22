@@ -61,14 +61,14 @@ public class ListaPacotresAdapter extends BaseAdapter {
     private void mostraPreco(View viewCriada, Pacote pacote) {
         //pegar preco do pacote e jogar na view
         TextView preco = viewCriada.findViewById(R.id.item_pacote_preco);
-        String moedaBrasileira = MoedaUtil.formataParaBrasileiro(pacote.getPreco());
+        String moedaBrasileira = pacote.getPreco();
         preco.setText(moedaBrasileira);
     }
 
     private void mostraDias(View viewCriada, Pacote pacote) {
         //pegar dias do pacote e jogar na view
         TextView dias = viewCriada.findViewById(R.id.item_pacote_dias);
-        String quantidadeDeDias = DiasUtil.formataEmTexto(pacote.getDias());
+        String quantidadeDeDias = DiasUtil.diasEmTexto(pacote.getDias());
         dias.setText(quantidadeDeDias);
     }
 

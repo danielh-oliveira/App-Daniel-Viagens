@@ -14,17 +14,17 @@ public class DiasUtil {
     public static final String DIA_MES = "dd/MM";
 
     @NonNull
-    public static String formataEmTexto(int numeroDeDias) {
-        if (numeroDeDias > 1) {
-            return numeroDeDias + PLURAL;
+    public static String diasEmTexto(int dias) {
+        if (dias > 1) {
+            return dias + PLURAL;
         }
-        return numeroDeDias + SINGULAR;
+        return dias + SINGULAR;
     }
 
-    public static String formatarDatas(int dias) {
+    public static String formatarDatas(int datas) {
         Calendar dataIda = Calendar.getInstance();
         Calendar dataVolta = Calendar.getInstance();
-        dataVolta.add(Calendar.DATE, dias);
+        dataVolta.add(Calendar.DATE, datas);
 
         SimpleDateFormat formatoBrasileiro = new SimpleDateFormat(DIA_MES);
         String dataIdaFromatada = formatoBrasileiro.format(dataIda.getTime());

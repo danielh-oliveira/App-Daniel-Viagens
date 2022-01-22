@@ -28,6 +28,6 @@ public class PagamentoActivity extends AppCompatActivity {
 
     private void mostraPreco(Pacote pacoteSaoPaulo) {
         TextView preco = findViewById(R.id.pagamento_compra_preco);
-        preco.setText(MoedaUtil.formataParaBrasileiro(pacoteSaoPaulo.getPreco()));
+        preco.setText(pacoteSaoPaulo.getPreco());
     }
 }

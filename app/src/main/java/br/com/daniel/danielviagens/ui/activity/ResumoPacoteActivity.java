@@ -36,7 +36,7 @@ public class ResumoPacoteActivity extends AppCompatActivity {
 
     private void mostraPreco(Pacote pacote) {
         TextView preco = findViewById(R.id.resumo_pacote_preco);
-        preco.setText(MoedaUtil.formataParaBrasileiro(pacote.getPreco()));
+        preco.setText(pacote.getPreco());
     }
 
     private void mostraDatas(Pacote pacote) {
@@ -46,7 +46,7 @@ public class ResumoPacoteActivity extends AppCompatActivity {
 
     private void mostraDias(Pacote pacote) {
         TextView dias = findViewById(R.id.resumo_pacote_dias);
-        dias.setText(DiasUtil.formataEmTexto(pacote.getDias()));
+        dias.setText(DiasUtil.diasEmTexto(pacote.getDias()));
     }
 
     private void mostraImagem(Pacote pacote) {

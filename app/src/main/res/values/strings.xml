@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">Daniel Viagens</string>
-    <string name="TITULO">Especiais</string>
-    <string name="SUBTITULO">Brasil</string>
-    <string name="DESC_BANNER">Banner inicial roxo dos pacotes</string>
+    <string name="inicio_titulo">Especiais</string>
+    <string name="inicio_subtitulo">Brasil</string>
+    <string name="desc_banner">Banner inicial dos pacotes</string>
     <string name="preco_final">Preço final:</string>
     <string name="realizar_pagamento">Realizar Pagamento</string>
-    <string name="imagem_do_local_destino_do_pacote">Imagem do local destino do pacote</string>
+    <string name="desc_imagem_pacote">Imagem do local destino do pacote</string>
     <string name="mascara_cartao_nome">abcdefghijklmnopqrstuvwxyzçABCDEFGHIJKLMNOPQRSTUVWXYZÇ\u0020</string>
     <string name="orientacao_cartao">Digite as informações do cartão de crédito que você deseja usar para o pagamento</string>
     <string name="valor_da_compra">Valor da compra:</string>
@@ -15,4 +15,7 @@
     <string name="cvc_cartao">CVC</string>
     <string name="finalizar_compra">Finalizar compra</string>
     <string name="nome_cartao">Nome no cartão</string>
+    <string name="pagamento_parabens">Parabéns!</string>
+    <string name="compra_sucesso">Compra realizada com sucesso :)</string>
+    <string name="confira_resumo">Confira o resumo da compra:</string>
 </resources>

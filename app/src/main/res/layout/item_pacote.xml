@@ -25,6 +25,7 @@
                 android:id="@+id/item_pacote_imagem"
                 android:layout_width="0dp"
                 android:layout_height="100dp"
+                android:contentDescription="@string/desc_imagem_pacote"
                 android:scaleType="centerCrop"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -78,13 +79,14 @@
                 android:id="@+id/item_pacote_preco"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
                 android:textColor="@android:color/holo_green_light"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:layout_marginBottom="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="@id/item_pacote_dias"
                 app:layout_constraintTop_toBottomOf="@id/item_pacote_dias"
+                tools:ignore="TextContrastCheck"
                 tools:text="@sample/pacotes.json/pacotes/preco" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,7 +9,7 @@
         android:id="@+id/resumo_pacote_imagem"
         android:layout_width="0dp"
         android:layout_height="140dp"
-        android:contentDescription="@string/imagem_do_local_destino_do_pacote"
+        android:contentDescription="@string/desc_imagem_pacote"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

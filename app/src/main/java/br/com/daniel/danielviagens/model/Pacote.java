@@ -3,6 +3,7 @@ package br.com.daniel.danielviagens.model;
 import java.math.BigDecimal;
 
 import br.com.daniel.danielviagens.util.DiasUtil;
+import br.com.daniel.danielviagens.util.MoedaUtil;
 
 public class Pacote {
 
@@ -30,8 +31,8 @@ public class Pacote {
         return dias;
     }
 
-    public BigDecimal getPreco() {
-        return preco;
+    public String getPreco() {
+        return MoedaUtil.formataParaBrasileiro(preco);
     }
 
     public String getDatas() {
