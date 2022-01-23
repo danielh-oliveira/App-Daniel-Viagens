@@ -10,7 +10,7 @@ Captura de tela do aplicativo:
 
 Demonstração de uso:
 
-![Gif do aplicativo em uso](https://media.giphy.com/media/GOAKbrUh3ig2uau2zU/giphy.gif)
+![Gif do aplicativo em uso](https://media.giphy.com/media/JHpyadeQrgp5YO1tA2/giphy.gif)
 
 ## Instalação
 

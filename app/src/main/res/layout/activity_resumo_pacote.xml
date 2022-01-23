@@ -81,7 +81,7 @@
         android:layout_margin="8dp"
         android:background="@drawable/botao_arredondado_laranja"
         android:text="@string/realizar_pagamento"
-        android:textColor="#4E342E"
+        android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
