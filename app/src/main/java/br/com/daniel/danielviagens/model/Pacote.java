@@ -1,11 +1,12 @@
 package br.com.daniel.danielviagens.model;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
 import br.com.daniel.danielviagens.util.DiasUtil;
 import br.com.daniel.danielviagens.util.MoedaUtil;
 
-public class Pacote {
+public class Pacote implements Serializable {
 
     private final String local;
     private final String imagem;

@@ -1,13 +1,14 @@
 package br.com.daniel.danielviagens.ui.activity;
 
+import static br.com.daniel.danielviagens.ui.activity.PacoteActivityConstante.CHAVE_PACOTE;
+
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import java.math.BigDecimal;
 
 import br.com.daniel.danielviagens.R;
 import br.com.daniel.danielviagens.model.Pacote;
@@ -23,12 +24,23 @@ public class ResumoCompraActivity extends AppCompatActivity {
         setContentView(R.layout.activity_resumo_compra);
         setTitle(TITULO_APPBAR_RESUMO_COMPRA);
 
-        Pacote pacoteSaoPaulo = new Pacote("São Paulo", "sao_paulo_sp", 2, new BigDecimal("243.99"));
+        carregaPacoteRecebido();
+    }
 
-        mostraImagem(pacoteSaoPaulo);
-        mostraLocal(pacoteSaoPaulo);
-        mostraDatas(pacoteSaoPaulo);
-        mostraPreco(pacoteSaoPaulo);
+    private void carregaPacoteRecebido() {
+        Intent intent = getIntent();
+        if(intent.hasExtra(CHAVE_PACOTE)) {
+            Pacote pacote = (Pacote) intent.getSerializableExtra(CHAVE_PACOTE);
+
+            inicializaCampos(pacote);
+        }
+    }
+
+    private void inicializaCampos(Pacote pacote) {
+        mostraImagem(pacote);
+        mostraLocal(pacote);
+        mostraDatas(pacote);
+        mostraPreco(pacote);
     }
 
     private void mostraPreco(Pacote pacote) {

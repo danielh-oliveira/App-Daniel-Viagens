@@ -1,5 +1,7 @@
 package br.com.daniel.danielviagens.ui.activity;
 
+import static br.com.daniel.danielviagens.ui.activity.PacoteActivityConstante.CHAVE_PACOTE;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -30,15 +32,20 @@ public class ListaPacotesActivity extends AppCompatActivity {
 
     private void configuraLista() {
         ListView listaDePacotes = findViewById(R.id.lista_pacotes_listview);
-        List<Pacote> pacotes = new PacoteDAO().lista();
+        final List<Pacote> pacotes = new PacoteDAO().lista();
         listaDePacotes.setAdapter(new ListaPacotresAdapter(pacotes, this));
-
         listaDePacotes.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent(ListaPacotesActivity.this, ResumoPacoteActivity.class);
-                startActivity(intent);
+            public void onItemClick(AdapterView<?> adapterView, View view, int posicao, long l) {
+                vaiParaResumoPacote(adapterView, posicao);
             }
         });
+    }
+
+    private void vaiParaResumoPacote(AdapterView<?> adapterView, int posicao) {
+        Intent intent = new Intent(ListaPacotesActivity.this, ResumoPacoteActivity.class);
+        final Pacote pacote = (Pacote) adapterView.getItemAtPosition(posicao);
+        intent.putExtra(CHAVE_PACOTE, pacote);
+        startActivity(intent);
     }
 }
