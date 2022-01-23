@@ -2,13 +2,13 @@ package br.com.daniel.danielviagens.ui.activity;
 
 import static br.com.daniel.danielviagens.ui.activity.PacoteActivityConstante.CHAVE_PACOTE;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import br.com.daniel.danielviagens.R;
 import br.com.daniel.danielviagens.model.Pacote;
@@ -29,7 +29,7 @@ public class ResumoCompraActivity extends AppCompatActivity {
 
     private void carregaPacoteRecebido() {
         Intent intent = getIntent();
-        if(intent.hasExtra(CHAVE_PACOTE)) {
+        if (intent.hasExtra(CHAVE_PACOTE)) {
             Pacote pacote = (Pacote) intent.getSerializableExtra(CHAVE_PACOTE);
 
             inicializaCampos(pacote);

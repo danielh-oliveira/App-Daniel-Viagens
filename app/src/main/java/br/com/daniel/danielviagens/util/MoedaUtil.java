@@ -5,8 +5,6 @@ import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.Locale;
 
-import br.com.daniel.danielviagens.model.Pacote;
-
 public class MoedaUtil {
 
     public static String formataParaBrasileiro(BigDecimal valor) {

@@ -2,15 +2,14 @@ package br.com.daniel.danielviagens.ui.activity;
 
 import static br.com.daniel.danielviagens.ui.activity.PacoteActivityConstante.CHAVE_PACOTE;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import br.com.daniel.danielviagens.R;
 import br.com.daniel.danielviagens.model.Pacote;
@@ -32,7 +31,7 @@ public class ResumoPacoteActivity extends AppCompatActivity {
 
     private void carregaPacoteRecebido() {
         Intent intent = getIntent();
-        if(intent.hasExtra(CHAVE_PACOTE)) {
+        if (intent.hasExtra(CHAVE_PACOTE)) {
             final Pacote pacote = (Pacote) intent.getSerializableExtra(CHAVE_PACOTE);
 
             inicializaCampos(pacote);
@@ -50,12 +49,7 @@ public class ResumoPacoteActivity extends AppCompatActivity {
 
     private void configuraBotaoPagamento(Pacote pacote) {
         Button botaoRealizaPagamento = findViewById(R.id.resumo_pacote_botao_realiza_pagamento);
-        botaoRealizaPagamento.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                vaiParaPagamento(pacote);
-            }
-        });
+        botaoRealizaPagamento.setOnClickListener(view -> vaiParaPagamento(pacote));
     }
 
     private void vaiParaPagamento(Pacote pacote) {

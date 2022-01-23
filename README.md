@@ -4,9 +4,13 @@ Estou desenvolvendo junto com as aulas do instrutor do curso de Constraint Layou
 
 ## 📲 Demonstração
 
-Criei a primeira tela do aplicativo onde é possivel visualizar os pacotes de viagens.
+Captura de tela do aplicativo:
  
  <img src="screenshot_1.png" alt="Captura de tela mostrando pacotes de viagem" width="30%"/> | <img src="screenshot_2.png" alt="Captura de tela mostrando pacotes de viagem" width="30%"/>
+
+Demonstração de uso:
+
+![Gif do aplicativo em uso](https://media.giphy.com/media/GOAKbrUh3ig2uau2zU/giphy.gif)
 
 ## Instalação
 

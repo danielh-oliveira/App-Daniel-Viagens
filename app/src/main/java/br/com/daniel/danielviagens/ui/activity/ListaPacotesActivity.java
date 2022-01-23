@@ -4,7 +4,6 @@ import static br.com.daniel.danielviagens.ui.activity.PacoteActivityConstante.CH
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
@@ -34,12 +33,7 @@ public class ListaPacotesActivity extends AppCompatActivity {
         ListView listaDePacotes = findViewById(R.id.lista_pacotes_listview);
         final List<Pacote> pacotes = new PacoteDAO().lista();
         listaDePacotes.setAdapter(new ListaPacotresAdapter(pacotes, this));
-        listaDePacotes.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int posicao, long l) {
-                vaiParaResumoPacote(adapterView, posicao);
-            }
-        });
+        listaDePacotes.setOnItemClickListener((adapterView, view, posicao, l) -> vaiParaResumoPacote(adapterView, posicao));
     }
 
     private void vaiParaResumoPacote(AdapterView<?> adapterView, int posicao) {

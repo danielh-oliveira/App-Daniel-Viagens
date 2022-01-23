@@ -5,8 +5,6 @@ import androidx.annotation.NonNull;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-import br.com.daniel.danielviagens.model.Pacote;
-
 public class DiasUtil {
 
     public static final String PLURAL = " dias";

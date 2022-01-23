@@ -1,5 +1,6 @@
 package br.com.daniel.danielviagens.ui.adapters;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
@@ -11,18 +12,17 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import br.com.daniel.danielviagens.util.DiasUtil;
-import br.com.daniel.danielviagens.util.MoedaUtil;
 import br.com.daniel.danielviagens.R;
-import br.com.daniel.danielviagens.util.ResourcesUtil;
 import br.com.daniel.danielviagens.model.Pacote;
+import br.com.daniel.danielviagens.util.DiasUtil;
+import br.com.daniel.danielviagens.util.ResourcesUtil;
 
 public class ListaPacotresAdapter extends BaseAdapter {
 
     private final List<Pacote> pacotes;
     private final Context context;
 
-    public ListaPacotresAdapter(List<Pacote> pacotes, Context context){
+    public ListaPacotresAdapter(List<Pacote> pacotes, Context context) {
         this.pacotes = pacotes;
         this.context = context;
     }
@@ -45,7 +45,7 @@ public class ListaPacotresAdapter extends BaseAdapter {
 
     @Override
     public View getView(int posicao, View view, ViewGroup parent) {
-        View viewCriada = LayoutInflater.from(context)
+        @SuppressLint("ViewHolder") View viewCriada = LayoutInflater.from(context)
                 .inflate(R.layout.item_pacote, parent, false);
 
         Pacote pacote = pacotes.get(posicao);
