@@ -2,8 +2,11 @@ package br.com.daniel.danielviagens.ui.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -12,7 +15,6 @@ import java.math.BigDecimal;
 import br.com.daniel.danielviagens.R;
 import br.com.daniel.danielviagens.model.Pacote;
 import br.com.daniel.danielviagens.util.DiasUtil;
-import br.com.daniel.danielviagens.util.MoedaUtil;
 import br.com.daniel.danielviagens.util.ResourcesUtil;
 
 public class ResumoPacoteActivity extends AppCompatActivity {
@@ -32,6 +34,19 @@ public class ResumoPacoteActivity extends AppCompatActivity {
         mostraDias(pacoteSaoPaulo);
         mostraDatas(pacoteSaoPaulo);
         mostraPreco(pacoteSaoPaulo);
+
+        configuraBotaoPagamento();
+    }
+
+    private void configuraBotaoPagamento() {
+        Button botaoRealizaPagamento = findViewById(R.id.resumo_pacote_botao_realiza_pagamento);
+        botaoRealizaPagamento.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ResumoPacoteActivity.this, PagamentoActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void mostraPreco(Pacote pacote) {
