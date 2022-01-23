@@ -4,10 +4,11 @@ Estou desenvolvendo junto com as aulas do instrutor do curso de Constraint Layou
 
 ## 📲 Demonstração
 
-Captura de tela do aplicativo:
+Capturas de tela do aplicativo:
  
- <img src="screenshot_1.jpeg" alt="Captura de tela mostrando pacotes de viagem" width="30%"/> | <img src="screenshot_2.jpeg" alt="Captura de tela mostrando resumo do pacote" width="30%"/>
-  <img src="screenshot_3.jpeg" alt="Captura de tela mostrando pacotes de viagem" width="30%"/> | <img src="screenshot_4.jpeg" alt="Captura de tela mostrando resumo do pacote" width="30%"/>
+<img src="screenshot_1.jpeg" alt="Captura de tela mostrando pacotes de viagem" width="30%"/>  <img src="screenshot_2.jpeg" alt="Captura de tela mostrando resumo do pacote" width="30%"/>
+
+<img src="screenshot_3.jpeg" alt="Captura de tela mostrando pacotes de viagem" width="30%"/> <img src="screenshot_4.jpeg" alt="Captura de tela mostrando resumo do pacote" width="30%"/>
 
 Demonstração de uso:
 
