@@ -12,6 +12,16 @@
         android:theme="@style/Theme.DanielVIagens"
         tools:ignore="AllowBackup">
         <activity
+            android:name=".ui.activity.SplashScreenActivity"
+            android:theme="@style/AppCompat.TelaCheia"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".ui.activity.ResumoCompraActivity"
             android:exported="false" />
         <activity
@@ -22,13 +32,7 @@
             android:exported="false" />
         <activity
             android:name=".ui.activity.ListaPacotesActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="false" />
     </application>
 
 </manifest>
